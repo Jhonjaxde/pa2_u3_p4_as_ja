@@ -194,6 +194,7 @@ public class Main {
 				num = numero+num;
 				return num;});
 		listaCambiada2.forEach(cadena-> LOG.info(cadena.toString()));
+		
 	}
 
 }
