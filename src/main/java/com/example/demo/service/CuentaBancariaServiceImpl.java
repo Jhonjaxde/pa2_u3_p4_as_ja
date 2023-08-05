@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +53,22 @@ public class CuentaBancariaServiceImpl implements ICuentaBancariaService{
 		this.cuentaBancariaRepository.insertar(cta);
 		
 		
+	}
+
+	@Override
+	public String agregar2(CuentaBancaria cta) {
+		LOG.info("Hilo repository: "+ Thread.currentThread().getName());
+		//sumar , restar , multiplicar : logica que demora un segundo
+		//cada vez que llama el metodo se va a demorar un segundo
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.cuentaBancariaRepository.insertar(cta);
+		
+		return cta.getNumero();
 	}
 
 	

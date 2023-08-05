@@ -12,4 +12,6 @@ public interface ICuentaBancariaService {
 	public List<CuentaBancaria> reporteCta();
 	public CuentaBancaria buscarPorNumero(String numero);
 	public void guardar(CuentaBancaria cta);
+	
+	public String agregar2(CuentaBancaria cta);
 }
